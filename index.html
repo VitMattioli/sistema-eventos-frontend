@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema para cadastro e consulta de eventos acadêmicos.">
+  <title>Eventos Acadêmicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">EA</span>
+      <span>Eventos<span class="brand-light">Acadêmicos</span></span>
+    </a>
+    <span class="topbar-note">PLATAFORMA UNIVERSITÁRIA</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">CONECTANDO CONHECIMENTO</span>
+        <h1>Encontre seu próximo<br><span>evento acadêmico.</span></h1>
+        <p>Consulte atividades, workshops e encontros que ampliam seus conhecimentos.</p>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="decoration-circle">✦</div>
+        <span>APRENDER<br>· COMPARTILHAR<br>· EVOLUIR</span>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel form-panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">PARTICIPE</span>
+            <h2>Cadastrar evento</h2>
+          </div>
+          <span class="heading-icon">＋</span>
+        </div>
+        <form id="event-form">
+          <label for="titulo">Título do evento <span>*</span></label>
+          <input id="titulo" name="titulo" type="text" maxlength="150" placeholder="Ex.: Semana da Tecnologia" required>
+
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" rows="4" placeholder="Conte um pouco sobre o evento..."></textarea>
+
+          <div class="form-row">
+            <div>
+              <label for="data_evento">Data <span>*</span></label>
+              <input id="data_evento" name="data_evento" type="date" required>
+            </div>
+            <div>
+              <label for="local">Local <span>*</span></label>
+              <input id="local" name="local" type="text" maxlength="100" placeholder="Ex.: Auditório Central" required>
+            </div>
+          </div>
+
+          <button class="primary-button" type="submit">
+            <span>Cadastrar evento</span><span aria-hidden="true">→</span>
+          </button>
+          <p id="form-message" class="form-message" role="status"></p>
+          <p class="required-note">* Campos obrigatórios</p>
+        </form>
+      </section>
+
+      <section class="events-section">
+        <div class="section-heading events-heading">
+          <div>
+            <span class="eyebrow">AGENDA UNIVERSITÁRIA</span>
+            <h2>Próximos eventos</h2>
+          </div>
+          <button id="refresh-button" class="refresh-button" type="button" title="Atualizar lista" aria-label="Atualizar lista">↻</button>
+        </div>
+        <div id="events-list" class="events-list" aria-live="polite">
+          <div class="loading-state">Carregando eventos...</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>Eventos Acadêmicos</span>
+    <span>Conhecimento que conecta.</span>
+  </footer>
+</body>
+</html>
