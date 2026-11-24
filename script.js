@@ -1,6 +1,6 @@
 // Depois de publicar o backend no Render, substitua pela URL pública da API.
 // Exemplo: https://sua-api.onrender.com
-const API_URL = "COLE_AQUI_A_URL_PUBLICA_DO_RENDER";
+const API_URL = "https://sistema-eventos-backend.onrender.com";
 
 const form = document.querySelector("#event-form");
 const eventsList = document.querySelector("#events-list");
